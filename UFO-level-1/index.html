@@ -26,6 +26,9 @@
       <p>The Truth is Out There</p>
     </div>
     <div class="container">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
       <div class="row margin-top-50">
         <div class="col-md-2">
           <aside class="filters">
@@ -39,27 +42,18 @@
                         <label for="date">Date</label>
                         <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
                       </li>
-                      <!-- <li class="filter list-group-item">
-                        <label for="date">City</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="benton">
+                      <li class="filter list-group-item">
+                        <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
                       </li>
                       <li class="filter list-group-item">
-                        <label for="date">State</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="ca">
+                        <button id="reset-btn" type="button" class="btn btn-default">Reset Search</button>
                       </li>
                       <li class="filter list-group-item">
-                        <label for="date">Country</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="us">
+                        <box id="filter-applied"></box>
                       </li>
-                      <li class="filter list-group-item">
-                        <label for="date">Shape</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="circle/light/etc.">
-                      </li> -->
                     </ul>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
                 </form>
-                <box id="filter-applied"></box>
               </div>
             </div>
           </aside>
@@ -88,13 +82,12 @@
       <span class="bottom">UFO Sightings</span>
     </footer>
   </div>
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
   <script src="static/js/data.js"></script>
   <script src="static/js/app.js"></script>
+  
 </body>
 
 </html>
