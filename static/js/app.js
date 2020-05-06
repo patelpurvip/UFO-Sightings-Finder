@@ -57,5 +57,7 @@ function runReset() {
         });
     });
     d3.select("#filter-applied").text("");
+    d3.select("#datetime").node().value = "";
+    // d3.select("#datetime").attr("placeholder")
     // d3.select("#datetime").clear();
 }
