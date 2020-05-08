@@ -115,5 +115,11 @@ function runReset() {
     });
     d3.select("#filter-applied").text("");
     // d3.select("#datetime").clear();
+    
+    d3.select("#datetime").node().value = "";
+    d3.select("#city").node().value = "";
+    d3.select("#state").node().value = "";
+    d3.select("#country").node().value = "";
+    d3.select("#shape").node().value = "";
 }
 
