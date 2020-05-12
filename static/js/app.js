@@ -35,7 +35,6 @@ button.on("click", function() {
 
     filteredResults.forEach((report) => {
         var row = tbody.append("tr");
-        console.log("working so far");
         Object.entries(report).forEach(([key, value]) => {
             var cell = row.append("td");
             cell.text(value);
@@ -58,6 +57,4 @@ function runReset() {
     });
     d3.select("#filter-applied").text("");
     d3.select("#datetime").node().value = "";
-    // d3.select("#datetime").attr("placeholder")
-    // d3.select("#datetime").clear();
 }

@@ -2,17 +2,22 @@
 var tableData = data;
 console.log(tableData)
 
-var tbody = d3.select("tbody");
 
-tableData.forEach((report) => {
-    var row = tbody.append("tr");
-    Object.entries(report).forEach(([key, value]) => {
-        var cell = row.append("td");
-        cell.text(value);
+function buildTable(data) {
+    var tbody = d3.select("tbody");
+    tbody.html("");
+
+    data.forEach((report) => {
+        var row = tbody.append("tr");
+        Object.entries(report).forEach(([key, value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+        });
     });
-});
+}
 
-//--BONUS---------------------------------------------------------
+buildTable(tbody);
+
 
 //--CREATE NEW BUTTONS
 d3.select("#input-fields").append("br");
@@ -32,18 +37,14 @@ d3.select("#input-fields").append("label").attr("for", "shape").text("Shape");
 d3.select("#input-fields").append("input").attr("class", "form-control").attr("id", "shape").attr("type", "text").attr("placeholder", "circle/light/etc.");
 
 
-//--Apply filters
+//--Program Listener
 var button = d3.select("#filter-btn");
+button.on("click", collectFilters);
 
-button.on("click", function() {
-    console.log("A filter was applied!");
-    console.log(d3.event.target);
-
+//--Filter data and build new table
+function collectFilters() {
     d3.event.preventDefault();
-    
-    // var inputFilters = d3.select("input-fields");
-    // var inputFiltersValue = inputFilters.property("value");
-    
+
     var inputDate = d3.select("#datetime");
     var inputDateValue = inputDate.property("value");
 
@@ -59,45 +60,108 @@ button.on("click", function() {
     var inputShape = d3.select("#shape");
     var inputShapeValue = inputShape.property("value");
 
+    
+    // var inputFilters = d3.selectALL(".form-control");
+    // // var inputFilters = d3.selectALL("input");
+    // var inputFiltersValue = inputFilters.property("value");
+    // var filterID = inputFilters.attr("id");
 
+    filterTable();
+}
+
+function filterTable() {
+    
     if (inputDateValue) {
         var filteredResults = tableData.filter(report => report.datetime === inputDateValue);
         d3.select("#filter-applied").text("Filtered by date: " + inputDateValue);
-    }
-    
+}
+
     else if (inputCityValue) {
         var filteredResults = tableData.filter(report => report.city === inputCityValue);
         d3.select("#filter-applied").text("Filtered by city: " + inputCityValue);
-    }
+}
     else if (inputStateValue) {
         var filteredResults = tableData.filter(report => report.state === inputStateValue);
         d3.select("#filter-applied").text("Filtered by state: " + inputStateValue);
-    }
+}
     else if (inputCountryValue) {
         var filteredResults = tableData.filter(report => report.country === inputCountryValue);
         d3.select("#filter-applied").text("Filtered by country: " + inputCountryValue);
-    }
+}
     else if (inputShapeValue) {
         var filteredResults = tableData.filter(report => report.shape === inputShapeValue);
         d3.select("#filter-applied").text("Filtered by shape: " + inputShapeValue);
-    }
+}
     else {
         console.log("Just kidding! No filter applied.");
-    }
+}
 
-//--END-BONUS---------------------------------------------------------
+    // if (inputFiltersValue) {
+    //     var filteredResults = tableData.filter(report => report.datetime === inputFiltersValue); --> NEED A MORE GENERIC ELEMENT FOR EACH FILTER OTHER THAN JUST DATETIME
+    //     d3.select("#filter-applied").text("Filtered by" + filterID + ": " + inputFiltersValue);
+    //     }
+    // else {
+    //     console.log("Just kidding! No filter applied.");
+    //     }
+        
+    buildTable(filteredResults);
 
-//Display filtered results
-    tbody.html("");
+    // tbody.html("");
 
-    filteredResults.forEach((report) => {
-        var row = tbody.append("tr");
-        Object.entries(report).forEach(([key, value]) => {
-            var cell = row.append("td");
-            cell.text(value);
-        });
-    });
-});
+    // filteredResults.forEach((report) => {
+    //     var row = tbody.append("tr");
+    //     Object.entries(report).forEach(([key, value]) => {
+    //         var cell = row.append("td");
+    //         cell.text(value);
+    //     });
+    // });
+}
+
+
+
+// //--Apply filters--OPTION 2
+// var filtersApplied = {};
+
+// function collectFilters() {
+    
+//     d3.event.preventDefault();
+
+//     var inputFilters = d3.select(".form-control");
+//     // var inputFilters = d3.select("input");
+//     var inputFiltersValue = inputFilters.property("value");
+//     var filterID = inputFilters.attr("id");
+//     d3.select("#filter-applied").text("Filtered by" + filterID + ": " + inputFiltersValue);
+    
+//     if (inputFiltersValue) { 
+//         filtersApplied[filterID] = inputFiltersValue;
+//     }
+//     else {
+//         console.log("Just kidding! No filter applied.");
+//         console.log("null values are no longer a problem");
+//         delete filtersApplied[filterID];
+//     };
+
+//     // console.log("The collectFilters function works");
+//     // console.log(filtersApplied)
+
+//     filterTable();
+// }
+
+// function filterTable () {
+//     tbody.html("");
+
+//     Object.entries(filtersApplied).forEach(([key, value]) => {
+//         var filteredResults = tableData.filter(report => report[key] === value);
+//         d3.select("#filter-applied").text("Filtered by" + key +": " + value);
+//         });
+
+//         buildTable(filteredResults);
+//     }
+
+    
+
+
+
 
 //--RESET-BUTTON-----------------------------------------------------------------------------
 var reset = d3.select("#reset-btn");
@@ -106,14 +170,14 @@ reset.on("click", runReset);
 
 function runReset() {
     tbody.html("");
-    tableData.forEach((report) => {
-        var row = tbody.append("tr");
-        Object.entries(report).forEach(([key, value]) => {
-            var cell = row.append("td");
-            cell.text(value);
-        });
-    });
+    buildTable();
+    
     d3.select("#filter-applied").text("");
-    // d3.select("#datetime").clear();
+
+    d3.select("#datetime").node().value = "";
+    d3.select("#city").node().value = "";
+    d3.select("#state").node().value = "";
+    d3.select("#country").node().value = "";
+    d3.select("#shape").node().value = "";
 }
 
