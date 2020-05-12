@@ -130,26 +130,10 @@ function runReset() {
     //     });
     // });
     d3.select("#filter-applied").text("");
-<<<<<<< HEAD:static/js/app-bonus-submitted.js
 
-=======
-    // d3.select("#datetime").clear();
-    
->>>>>>> c4a96a64da79281f8299a2cbe3b886a26456bb67:static/js/app-bonus.js
     d3.select("#datetime").node().value = "";
     d3.select("#city").node().value = "";
     d3.select("#state").node().value = "";
     d3.select("#country").node().value = "";
     d3.select("#shape").node().value = "";
 }
-
-// function buildTable() {
-
-//     tableData.forEach((report) => {
-//         var row = tbody.append("tr");
-//         Object.entries(report).forEach(([key, value]) => {
-//             var cell = row.append("td");
-//             cell.text(value);
-//         });
-//     });  
-// }
