@@ -122,13 +122,7 @@ reset.on("click", runReset);
 function runReset() {
     tbody.html("");
     buildTable(tableData);
-    // tableData.forEach((report) => {
-    //     var row = tbody.append("tr");
-    //     Object.entries(report).forEach(([key, value]) => {
-    //         var cell = row.append("td");
-    //         cell.text(value);
-    //     });
-    // });
+
     d3.select("#filter-applied").text("");
 
     d3.select("#datetime").node().value = "";
