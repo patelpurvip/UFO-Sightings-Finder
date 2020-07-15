@@ -16,3 +16,4 @@ Search for UFO sightings using the following features from the table's columns:
   5. Shape
 
 ## Go to the [Online UFO Sightings Database](https://patelpurvip.github.io/javascript-challenge/) now!
+### FIND YOUR TRUTH!
