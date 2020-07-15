@@ -4,5 +4,15 @@ WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and we here at `
 
 There is just one tiny problem though... the collection is too large to search through manually. Even our most dedicated followers are complaining that they are having trouble locating specific reports in this mess.
 
-That's why I took it upon myself to write code to create a dynamic, searchable, filter-able table based on the [initial dataset](static/js/data.js). Plus, the webpage only uses JavaScript, HTML, and CSS, and D3.js, since they are the only coding languages which can be trusted.
+That's why I took it upon myself to write code to create the [Online UFO Sightings Database](https://patelpurvip.github.io/javascript-challenge/), a dynamic, searchable, filter-able table based on the [initial dataset](static/js/data.js). Plus, the webpage only uses JavaScript, HTML, and CSS, and D3.js, since they are the only coding languages which can be trusted.
 
+## Available Filters
+Search for UFO sightings using the following features from the table columns:
+
+  1. `date/time`
+  2. `city`
+  3. `state`
+  4. `country`
+  5. `shape`
+
+## Go to the [Online UFO Sightings Database](https://patelpurvip.github.io/javascript-challenge/) now!
