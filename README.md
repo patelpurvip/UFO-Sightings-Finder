@@ -7,12 +7,12 @@ There is just one tiny problem though... the collection is too large to search t
 That's why I took it upon myself to write code to create the [Online UFO Sightings Database](https://patelpurvip.github.io/javascript-challenge/), a dynamic, searchable, filter-able table based on the [initial dataset](static/js/data.js). Plus, the webpage only uses JavaScript, HTML, and CSS, and D3.js, since they are the only coding languages which can be trusted.
 
 ## Available Filters
-Search for UFO sightings using the following features from the table columns:
+Search for UFO sightings using the following features from the table's columns:
 
-  1. `date/time`
-  2. `city`
-  3. `state`
-  4. `country`
-  5. `shape`
+  1. Date/Time
+  2. City
+  3. State
+  4. Country
+  5. Shape
 
 ## Go to the [Online UFO Sightings Database](https://patelpurvip.github.io/javascript-challenge/) now!
