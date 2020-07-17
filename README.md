@@ -4,7 +4,7 @@ WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and we here at `
 
 There is just one tiny problem though... the collection is too large to search through manually. Even our most dedicated followers are complaining that they are having trouble locating specific reports in this mess.
 
-That's why I took it upon myself to write code to create the [Online UFO Sightings Database](https://patelpurvip.github.io/javascript-challenge/), a dynamic, searchable, filter-able table based on the [initial dataset](static/js/data.js). Plus, the webpage only uses JavaScript, HTML, and CSS, and D3.js, since they are the only coding languages which can be trusted.
+That's why I took it upon myself to write code to create the [Online UFO Sightings Database](https://patelpurvip.github.io/UFO-Sightings-Finder/), a dynamic, searchable, filter-able table based on the [initial dataset](static/js/data.js). Plus, the webpage only uses JavaScript, HTML, and CSS, and D3.js, since they are the only coding languages which can be trusted.
 
 ## Available Filters
 Search for UFO sightings using the following features from the table's columns:
@@ -15,5 +15,5 @@ Search for UFO sightings using the following features from the table's columns:
   4. Country
   5. Shape
 
-## Go to the [Online UFO Sightings Database](https://patelpurvip.github.io/javascript-challenge/) now!
+## Go to the [Online UFO Sightings Database](https://patelpurvip.github.io/UFO-Sightings-Finder/) now!
 ### FIND YOUR TRUTH!
